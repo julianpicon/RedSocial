@@ -30,6 +30,7 @@ class Database:
         self.open_connection()
         cur = con.cursor()
         cur.execute('SELECT id from usuario where correo = %s and password = %s', (email, password))
+        #cur.execute('SELECT id from usuario where correo = %s and password = ' + password, (email))
         result = cur.fetchall()
         return result
 
